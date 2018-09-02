@@ -40,12 +40,12 @@ cacheSolve <- function(x, ...) {
     #if inverse doesn't exist calculate a new one
     invr <- x$getSolve()
     if(any(is.na(invr))){
-        message("Getting cached data")
         invr <- solve(x$getmat())
         x$setSolve(invr)
         return(invr)
     }
     #else return inverse
+    message("Getting cached data")
     return(invr)
     
 }
